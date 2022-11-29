@@ -29,7 +29,7 @@ $sql = "insert into mahasiswa (id_jurusan, nim, nama, jenis_kelamin, tempat_lahi
 if (mysqli_query($con,$sql)){
     echo "Data berhasil ditambah";
 }else{
-    echo "Ada error". mysqli_error();
+    echo "Ada error". mysqli_error($con);
 }
 
 mysqli_close($con);
@@ -45,7 +45,7 @@ mysqli_close($con);
     <title>Tambah Data Mahasiswa</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="insert.php" method="post">
         NIM: <input type="text" name="nim"><br>
         Nama: <input type="text" name="nama"><br>
         ID Jurusan: <input type="number" name="id_jurusan"><br>
